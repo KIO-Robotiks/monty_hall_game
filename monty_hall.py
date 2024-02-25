@@ -19,6 +19,7 @@ games_amount = namespace.games_amount
 doors_amount = namespace.doors_amount
 
 
+# Create empty doors pool and place automobile behind the one door
 def get_doors(doors_amount):
     doors = {}
 
@@ -34,9 +35,9 @@ def get_doors(doors_amount):
     return doors
 
 
+# Open the doors so that 2 remain closed
 def open_doors(doors, choise):
         
-    # Открываем двери, так, чтобы 2 остались закрыты
     doors_open = 0
     for i in doors:
         if doors_open == doors_amount - 2:
@@ -51,9 +52,9 @@ def open_doors(doors, choise):
     return doors
 
 
+# Choise other closed door
 def change_choise(doors, choise):
 
-    # выбираем другую неоткрытую дверь
     for i in doors:
         if not doors[i]['open'] and i != choise:
             choise = i
@@ -62,6 +63,7 @@ def change_choise(doors, choise):
     return choise
 
 
+# Game
 def game():
 
     wins = 0
